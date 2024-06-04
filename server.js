@@ -28,15 +28,12 @@ function generateResponse(message) {
     if (greetings.includes(message)) {
         return casualResponses[Math.floor(Math.random() * casualResponses.length)];
     } else {
-        // Add more logic here for other intents and responses
         return "I'm sorry, I didn't quite catch that. Can you please repeat?";
     }
 }
 
-// Serve static files
 app.use(express.static('public'));
 
-// Start the server
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
     console.log(`Server running on port http://localhost:${PORT}`);
